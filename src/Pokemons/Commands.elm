@@ -26,4 +26,4 @@ memberDecoder =
     ("name" := Decode.string)
     ("pokemonType" := Decode.string)
     ("pokemonImage" := Decode.string)
-    ("catched" := Decode.bool)
+    ("description" := Decode.string)

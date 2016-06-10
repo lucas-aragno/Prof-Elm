@@ -29,20 +29,8 @@ formCatched pokemon =
   div
      [ class "clearfix py1"
      ]
-     [ div [ class "col col-5" ] [ text "Catched" ]
-     , div [ class "col col-7" ]
-         [ span [ class "h2 bold" ] [text (toString pokemon.catched) ]
-         , btnCatchTrue pokemon
-         , btnCatchFalse pokemon
+     [ div [ class "col col-6" ] [ img [src pokemon.pokemonImage][]]
+     , div [ class "col col-6" ]
+         [ span [ class "h2 bold" ] [text (toString pokemon.description) ]
          ]
       ]
-
-btnCatchFalse : Pokemon -> Html.Html Msg
-btnCatchFalse pokemon =
-  a [ class "btn ml1 h1" ]
-    [ i [ class "fa fa-minus-circle" ] [] ]
-
-btnCatchTrue : Pokemon -> Html.Html Msg
-btnCatchTrue pokemon =
-  a [ class "btn ml1 h1" ]
-    [ i [ class "fa fa-plus-circle" ] [] ]

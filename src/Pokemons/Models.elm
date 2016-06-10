@@ -8,7 +8,7 @@ type alias Pokemon =
   , name : String
   , pokemonType: String
   , pokemonImage: String
-  , catched: Bool
+  , description: String
   }
 
 new : Pokemon
@@ -17,5 +17,5 @@ new  =
   , name = ""
   , pokemonType = ""
   , pokemonImage = ""
-  , catched = False
+  , description = ""
   }
