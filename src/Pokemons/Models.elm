@@ -6,12 +6,12 @@ type alias PokemonId =
 type alias Pokemon =
   { id : PokemonId
   , name : String
-  , type : String
+  , pokemonType: String
   }
 
 new : Pokemon
 new  =
   { id = 0
   , name = ""
-  , type = ""
-}
+  , pokemonType = ""
+  }

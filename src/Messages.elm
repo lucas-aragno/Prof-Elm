@@ -1,4 +1,7 @@
 module Messages exposing (..)
 
+import Pokemons.Messages
+
+
 type Msg
-  = NoOp
+  = PokemonsMsg Pokemons.Messages.Msg

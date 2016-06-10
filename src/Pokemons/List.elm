@@ -1,4 +1,4 @@
-module Pokemon.List exposing (..)
+module Pokemons.List exposing (..)
 
 import Html exposing (..)
 import Html.Attributes exposing (class)
@@ -13,12 +13,12 @@ view pokemons =
     , list pokemons
     ]
 
-nav : List Pokemons -> Html Msg
+nav : List Pokemon -> Html Msg
 nav pokemons =
   div [ class "clearfix mb2 white bg-black" ]
       [ div [ class "left p2" ] [text "Pokemons"] ]
 
-list : List Pokemons -> Html Msg
+list : List Pokemon -> Html Msg
 list pokemons =
     div [ class "p2" ]
         [ table []
@@ -30,7 +30,7 @@ list pokemons =
                     , th [] [ text "Actions" ]
                     ]
                 ]
-            , tbody [] (List.map pokemonRow players)
+            , tbody [] (List.map pokemonRow pokemons)
             ]
         ]
 
@@ -39,7 +39,7 @@ pokemonRow pokemon =
     tr []
         [ td [] [ text (toString pokemon.id) ]
         , td [] [ text pokemon.name ]
-        , td [] [ text (toString pokemon.type) ]
+        , td [] [ text (toString pokemon.pokemonType) ]
         , td []
             []
         ]
