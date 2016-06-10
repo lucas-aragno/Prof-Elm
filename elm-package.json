@@ -1,7 +1,7 @@
 {
     "version": "1.0.0",
     "summary": "Just a test to teach myself elm",
-    "repository": "https://github.com/lucas-aragno/Prof-Elm.git",
+    "repository": "https://github.com/lucas-aragno/prof-elm.git",
     "license": "BSD3",
     "source-directories": [
         "."
