@@ -18,4 +18,7 @@
   npm run boot
 ```
 
-***Visit localhost:3000***
+**Visit localhost:3000 and you should see:**
+
+
+![](https://cloud.githubusercontent.com/assets/5210254/15980572/1f2f79e2-2f43-11e6-9834-6ec8a27af988.gif)
