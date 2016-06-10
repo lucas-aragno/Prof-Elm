@@ -22,3 +22,12 @@ The `init` function receives a tuple where
 
 We are not sending any messages to our app so far that's why we have `NoOp`
 
+
+# How to run it:
+
+Just run elm's reactor on the main directory
+
+```
+ elm reactor
+``` 
+ 
