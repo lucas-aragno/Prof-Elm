@@ -1,7 +1,7 @@
 {
   "pokemons": [
-    { "id": 1, "name": "cyndaquil", "type": "fire", "image": "http://cdn.bulbagarden.net/upload/thumb/9/9b/155Cyndaquil.png/250px-155Cyndaquil.png"},
-    { "id": 2, "name": "chikorita", "type": "grass", "image": "http://cdn.bulbagarden.net/upload/thumb/b/bf/152Chikorita.png/250px-152Chikorita.png" },
-    { "id": 3, "name": "totodile", "type": "water", "image": "http://cdn.bulbagarden.net/upload/thumb/d/df/158Totodile.png/250px-158Totodile.png" }
+    { "id": 1, "name": "cyndaquil", "pokemonType": "fire", "pokemonImage": "http://cdn.bulbagarden.net/upload/thumb/9/9b/155Cyndaquil.png/250px-155Cyndaquil.png"},
+    { "id": 2, "name": "chikorita", "pokemonType": "grass", "pokemonImage": "http://cdn.bulbagarden.net/upload/thumb/b/bf/152Chikorita.png/250px-152Chikorita.png" },
+    { "id": 3, "name": "totodile", "pokemonType": "water", "pokemonImage": "http://cdn.bulbagarden.net/upload/thumb/d/df/158Totodile.png/250px-158Totodile.png" }
   ]
 }

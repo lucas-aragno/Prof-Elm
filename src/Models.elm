@@ -11,5 +11,5 @@ type alias Model =
 
 initialModel : Model
 initialModel =
-  { pokemons = [ Pokemon 1 "Chikorita" "Grass" "http://cdn.bulbagarden.net/upload/thumb/b/bf/152Chikorita.png/250px-152Chikorita.png"]
+  { pokemons = []
   }
