@@ -1,25 +1,37 @@
 module Main exposing (..)
 
 import Html exposing (Html, button, div, text)
-import Html.Events exposing (onClick)
 import Html.App
+import Widget
 
 -- MODEL
 
 
-type alias Model =
-    Int
+type alias AppModel =
+    { widgetModel : Widget.Model
+    }
 
-init : ( Model, Cmd Msg)
+
+
+initialModel : AppModel
+initialModel =
+    { widgetModel = Widget.initialModel
+    }
+
+
+
+
+init : ( AppModel, Cmd Msg )
 init =
-    ( 0, Cmd.none )
+    ( initialModel, Cmd.none )
+
 
 
 -- MESSAGES
 
 
 type Msg
-    = Increment Int
+    = WidgetMsg Widget.Msg
 
 
 
@@ -27,11 +39,10 @@ type Msg
 
 
 
-view : Model -> Html Msg
+view : AppModel -> Html Msg
 view model =
     div []
-        [ button [onClick (Increment 2) ] [text "+" ]
-        , text (toString model)
+        [ Html.App.map WidgetMsg (Widget.view model.widgetModel)
         ]
 
 
@@ -40,11 +51,15 @@ view model =
 
 
 
-update : Msg -> Model -> ( Model, Cmd Msg )
+update : Msg -> AppModel -> ( AppModel, Cmd Msg )
 update msg model =
     case msg of
-        Increment howMuch ->
-            ( model + howMuch, Cmd.none )
+        WidgetMsg subMsg ->
+            let
+                ( updatedWidgetModel, widgetCmd ) =
+                    Widget.update subMsg model.widgetModel
+            in
+                ( {model | widgetModel = updatedWidgetModel }, Cmd.map WidgetMsg widgetCmd )
 
 
 
@@ -52,7 +67,7 @@ update msg model =
 
 
 
-subscriptions : Model -> Sub Msg
+subscriptions : AppModel -> Sub Msg
 subscriptions model =
     Sub.none
 
@@ -61,8 +76,8 @@ subscriptions model =
 -- MAIN
 
 
-
-main = 
+main : Program Never
+main =
     Html.App.program
         { init = init
         , view = view
