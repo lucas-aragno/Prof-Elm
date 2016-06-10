@@ -21,8 +21,9 @@ collectionDecoder =
 
 memberDecoder : Decode.Decoder Pokemon
 memberDecoder =
-  Decode.object4 Pokemon
+  Decode.object5 Pokemon
     ("id" := Decode.int)
     ("name" := Decode.string)
     ("pokemonType" := Decode.string)
     ("pokemonImage" := Decode.string)
+    ("catched" := Decode.bool)
