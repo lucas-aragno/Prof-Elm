@@ -7,6 +7,7 @@ type alias Pokemon =
   { id : PokemonId
   , name : String
   , pokemonType: String
+  , pokemonImage: String
   }
 
 new : Pokemon
@@ -14,4 +15,5 @@ new  =
   { id = 0
   , name = ""
   , pokemonType = ""
+  , pokemonImage = ""
   }

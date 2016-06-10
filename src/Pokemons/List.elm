@@ -1,7 +1,7 @@
 module Pokemons.List exposing (..)
 
 import Html exposing (..)
-import Html.Attributes exposing (class)
+import Html.Attributes exposing (class, src)
 import Pokemons.Messages exposing (..)
 import Pokemons.Models exposing (Pokemon)
 
@@ -27,6 +27,7 @@ list pokemons =
                     [ th [] [ text "Id" ]
                     , th [] [ text "Name" ]
                     , th [] [ text "Type" ]
+                    , th [] [ text "Image" ]
                     , th [] [ text "Actions" ]
                     ]
                 ]
@@ -39,7 +40,8 @@ pokemonRow pokemon =
     tr []
         [ td [] [ text (toString pokemon.id) ]
         , td [] [ text pokemon.name ]
-        , td [] [ text (toString pokemon.pokemonType) ]
+        , td [] [ text pokemon.pokemonType ]
+        , td [] [ img [ src pokemon.pokemonImage ] [] ]
         , td []
             []
         ]
