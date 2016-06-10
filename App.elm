@@ -1,29 +1,21 @@
 module Main exposing (..)
 
-import Html exposing (Html, button, div, text)
+import Html exposing (Html, div, text)
 import Html.App
-import Widget
+import Mouse
+import Keyboard
+
 
 -- MODEL
 
 
-type alias AppModel =
-    { widgetModel : Widget.Model
-    }
+type alias Model =
+    Int
 
 
-
-initialModel : AppModel
-initialModel =
-    { widgetModel = Widget.initialModel
-    }
-
-
-
-
-init : ( AppModel, Cmd Msg )
+init : ( Model, Cmd Msg )
 init =
-    ( initialModel, Cmd.none )
+    ( 0, Cmd.none )
 
 
 
@@ -31,45 +23,44 @@ init =
 
 
 type Msg
-    = WidgetMsg Widget.Msg
+    = MouseMsg Mouse.Position
+    | KeyMsg Keyboard.KeyCode
 
 
 
 -- VIEW
 
 
-
-view : AppModel -> Html Msg
+view : Model -> Html Msg
 view model =
     div []
-        [ Html.App.map WidgetMsg (Widget.view model.widgetModel)
-        ]
+        [ text (toString model) ]
 
 
 
 -- UPDATE
 
 
-
-update : Msg -> AppModel -> ( AppModel, Cmd Msg )
+update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
-        WidgetMsg subMsg ->
-            let
-                ( updatedWidgetModel, widgetCmd ) =
-                    Widget.update subMsg model.widgetModel
-            in
-                ( {model | widgetModel = updatedWidgetModel }, Cmd.map WidgetMsg widgetCmd )
+        MouseMsg position ->
+            ( model + 1, Cmd.none )
+
+        KeyMsg code ->
+            ( model + 2, Cmd.none )
 
 
 
 -- SUBSCRIPTIONS
 
 
-
-subscriptions : AppModel -> Sub Msg
+subscriptions : Model -> Sub Msg
 subscriptions model =
-    Sub.none
+    Sub.batch
+        [ Mouse.clicks MouseMsg
+        , Keyboard.presses KeyMsg
+        ]
 
 
 

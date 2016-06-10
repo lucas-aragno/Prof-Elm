@@ -1,0 +1,7 @@
+{
+  "pokemons": [
+    { "id": 1, "name": "cyndaquil", "type": "fire" },
+    { "id": 2, "name": "chikorita", "type": "grass" },
+    { "id": 3, "name": "totodile", "type": "water" }
+  ]
+}
